@@ -1,0 +1,28 @@
+import { ArgTypes, Canvas, Meta, Source } from "@storybook/blocks";
+
+import * as MapEitherStories from "./index.stories";
+
+<Meta of={MapEitherStories} />;
+
+# `MapEither<R, L>`
+
+`MapEither` allows for mapping an `Either` to an element.
+
+[`Either` Documentation {"\u{21D2}"}](https://effect.website/docs/data-types/either/)
+
+[`Either` Reference {"\u{21D2}"}](https://effect-ts.github.io/effect/effect/Either.ts.html)
+
+The `Either` type is useful for cases where a value might be one of two types.
+The most popular use of it is for success/error types (but can also be used for representing other things e.g. UUID/handle identifiers, or individual/group accounts).
+
+`MapEither` takes an `Either` value (via the `on` property) and transforms it (via the `children` property) to a JSX element.
+Should there not be an `Either` value, it can provide a fallback element via the `fallback` property.
+When the `keyed` property is present, the mapping functions in `children` use values instead of accessors.
+
+<ArgTypes of={MapEitherStories} />
+
+## Examples
+
+<Canvas of={MapEitherStories.Basic} />
+<Canvas of={MapEitherStories.Fallback} />
+<Canvas of={MapEitherStories.Keyed} />

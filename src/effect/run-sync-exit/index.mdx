@@ -1,0 +1,26 @@
+import { ArgTypes, Canvas, Meta, Source } from "@storybook/blocks";
+
+import * as RunSyncExitStories from "./index.stories";
+
+<Meta of={RunSyncExitStories} />
+
+# `RunSyncExit<A, E>`
+
+`RunSyncExit` allows for running a synchronous `Effect` and mapping the result to a JSX element.
+
+[`Effect.runSyncExit` Documentation {"\u{21D2}"}](https://effect.website/docs/getting-started/running-effects/#runsyncexit)
+
+[`Effect.runSyncExit` Reference {"\u{21D2}"}](https://effect-ts.github.io/effect/effect/Effect.ts.html#runsyncexit)
+
+`RunSyncExit` runs the `Effect` synchronously.
+If the effect succeeds, the result is handled by `onSuccess`.
+If the effect fails, the result is handled by `onFailure`.
+
+<ArgTypes of={RunSyncExitStories} />
+
+## Examples
+
+The following are wrapped in an `ErrorBoundary`.
+
+<Canvas of={RunSyncExitStories.Basic} />
+<Canvas of={RunSyncExitStories.Error} />

@@ -1,0 +1,29 @@
+import { ArgTypes, Canvas, Meta, Source } from "@storybook/blocks";
+
+import * as MapExitStories from "./index.stories";
+
+<Meta of={MapExitStories} />;
+
+# `MapExit<T, E>`
+
+`MapExit` allows for mapping an `Exit` to an element.
+
+[`Exit` Documentation {"\u{21D2}"}](https://effect.website/docs/data-types/exit/)
+
+[`Exit` Reference {"\u{21D2}"}](https://effect-ts.github.io/effect/effect/Exit.ts.html)
+
+The `Exit` type represents the result of executing an effect.
+It is similar to `Either` but more constrained, since the error type gets wrapped in a `Cause<E>`.
+`Cause<E>` encapsulates variants of error states.
+
+`MapExit` takes an `Exit` value (via the `on` property) and transforms it (via the `children` property) to a JSX element.
+Should there not be an `Exit` value, it can provide a fallback element via the `fallback` property.
+When the `keyed` property is present, the mapping functions in `children` use values instead of accessors.
+
+<ArgTypes of={MapExitStories} />
+
+## Examples
+
+<Canvas of={MapExitStories.Basic} />
+<Canvas of={MapExitStories.Fallback} />
+<Canvas of={MapExitStories.Keyed} />

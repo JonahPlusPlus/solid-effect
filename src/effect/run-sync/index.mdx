@@ -1,0 +1,25 @@
+import { ArgTypes, Canvas, Meta, Source } from "@storybook/blocks";
+
+import * as RunSyncStories from "./index.stories";
+
+<Meta of={RunSyncStories} />
+
+# `RunSync<A, E>`
+
+`RunSync` allows for running a synchronous `Effect` and mapping the successful value to a JSX element.
+
+[`Effect.runSync` Documentation {"\u{21D2}"}](https://effect.website/docs/getting-started/running-effects/#runsync)
+
+[`Effect.runSync` Reference {"\u{21D2}"}](https://effect-ts.github.io/effect/effect/Effect.ts.html#runsync)
+
+`RunSync` runs the `Effect` synchronously.
+If the effect fails, the `Cause` is thrown and can be caught in an `ErrorBoundary`.
+
+<ArgTypes of={RunSyncStories} />
+
+## Examples
+
+The following are wrapped in an `ErrorBoundary`.
+
+<Canvas of={RunSyncStories.Basic} />
+<Canvas of={RunSyncStories.Error} />

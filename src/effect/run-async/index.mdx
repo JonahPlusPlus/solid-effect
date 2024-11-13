@@ -1,0 +1,25 @@
+import { ArgTypes, Canvas, Meta, Source } from "@storybook/blocks";
+
+import * as RunAsyncStories from "./index.stories";
+
+<Meta of={RunAsyncStories} />
+
+# `RunAsync<A, E>`
+
+`RunAsync` allows for running an asynchronous `Effect` and mapping the successful value to a JSX element.
+
+[`Effect.runPromise` Documentation {"\u{21D2}"}](https://effect.website/docs/getting-started/running-effects/#runpromise)
+
+[`Effect.runPromise` Reference {"\u{21D2}"}](https://effect-ts.github.io/effect/effect/Effect.ts.html#runpromise)
+
+`RunAsync` runs the `Effect` as a promise and integrates with `Suspense`.
+If the effect fails, the `Cause` is thrown and can be caught in an `ErrorBoundary`.
+
+<ArgTypes of={RunAsyncStories} />
+
+## Examples
+
+The following are wrapped in an `ErrorBoundary` and a `Suspense`. Reload to watch the examples load in.
+
+<Canvas of={RunAsyncStories.Basic} />
+<Canvas of={RunAsyncStories.Error} />

@@ -1,0 +1,42 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="runtime/makeRuntime" />
+
+# `makeRuntime<R>`
+
+`makeRuntime` allows for creating variants of utilities found in `Effect` that use a custom runtime, rather than the default runtime.
+
+### Signature
+
+`<R>(runtime: Runtime<R>) => SolidRuntime<R>`
+
+## Example
+
+```tsx
+// runtime.tsx
+
+import { makeRuntime } from "../runtime";
+import { Context, Effect, Layer, ManagedRuntime } from "effect";
+
+// Our custom service that our runtime provides.
+class NumberGenerator extends Context.Tag("NumberGeneratorService")<
+  NumberGenerator,
+  { readonly generate: Effect.Effect<number> }
+>() {}
+
+const NumberGeneratorLive = Layer.succeed(
+  NumberGenerator,
+  NumberGenerator.of({
+    generate: Effect.succeed(5),
+  }),
+);
+
+export const rt = ManagedRuntime.make(NumberGeneratorLive);
+
+const { createEffectResource, RunAsync, RunAsyncExit, RunSync, RunSyncExit } =
+  makeRuntime(await rt.runtime());
+
+export { createEffectResource, RunAsync, RunAsyncExit, RunSync, RunSyncExit };
+```
+
+It is necessary to destructure and restructure the exports in ESM, to ensure the exports are static.

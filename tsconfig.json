@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "newLine": "LF",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,73 @@
+{
+  "name": "solid-effect",
+  "version": "1.0.0",
+  "description": "A collection of utilities for working with EffectTS in SolidJS",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "check:all": "pnpm run check:lint && pnpm run check:test && pnpm run check:format",
+    "check:format": "prettier . --check",
+    "check:lint": "eslint .",
+    "check:test": "vitest run",
+    "fix:all": "pnpm run fix:lint && pnpm run fix:format",
+    "fix:format": "prettier . --write",
+    "fix:lint": "eslint . --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "solid",
+    "solidjs",
+    "effect"
+  ],
+  "author": "JonahPlusPlus",
+  "license": "(MIT OR Apache-2.0)",
+  "engines": {
+    "pnpm": ">=9"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "3.2.2",
+    "@eslint/js": "^9.14.0",
+    "@solidjs/testing-library": "^0.8.10",
+    "@storybook/addon-essentials": "8.5.0-alpha.2",
+    "@storybook/addon-interactions": "8.5.0-alpha.2",
+    "@storybook/blocks": "8.5.0-alpha.2",
+    "@storybook/test": "8.5.0-alpha.2",
+    "@testing-library/jest-dom": "^6.6.2",
+    "@types/node": "^22.8.6",
+    "eslint": "^9.14.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "storybook": "8.5.0-alpha.2",
+    "storybook-solidjs": "1.0.0-beta.6",
+    "storybook-solidjs-vite": "1.0.0-beta.6",
+    "tsup": "^8.3.0",
+    "tsup-preset-solid": "^2.2.0",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.14.0",
+    "vite-plugin-solid": "^2.10.2",
+    "vitest": "^2.1.2"
+  },
+  "dependencies": {
+    "effect": "^3.8.4",
+    "solid-js": "^1.9.3"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "browser": {},
+  "exports": {
+    "solid": "./dist/index.jsx",
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "typesVersions": {},
+  "packageManager": "pnpm@9.1.4+sha512.9df9cf27c91715646c7d675d1c9c8e41f6fce88246f1318c1aa6a1ed1aeb3c4f032fcdf4ba63cc69c4fe6d634279176b5358727d8f2cc1e65b65f43ce2f8bfb0"
+}

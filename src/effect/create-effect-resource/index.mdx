@@ -1,0 +1,56 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="effect/createEffectResource" />
+
+# `createEffectResource<A, E>`
+
+`createEffectResource` is a utility for creating a `Resource` that runs an asynchronous `Effect`.
+This is used inside of `RunAsync` and `RunAsyncExit` to convert the effect into a resource.
+
+### Signature
+
+`<A, E>(options?: ResourceOptions<A>) => [Resource<A>, Setter<Effect.Effect<A, E, R> | null>, ResourceActions<A | undefined>]`
+
+It takes in [resource options](https://docs.solidjs.com/reference/basic-reactivity/create-resource#options) (optional),
+and it returns (in an array), a resource, a signal setter for the effect, and resource actions (`{ mutate, refetch }`).
+
+It is equivalent to the following:
+
+```tsx
+// Where runtime is the default runtime or custom runtime.
+const [effect, setEffect] = createSignal<Effect.Effect<A, E, R> | null>(null);
+const [resource, options] = createResource<A, Effect.Effect<A, E, R>>(
+  effect,
+  (src) => Runtime.runPromise(runtime)(src),
+);
+```
+
+It is useful when you need run an `Effect` but the result might not be mapped directly to a JSX element.
+For example, in cases where the resource is used by many components.
+
+## Example
+
+```tsx
+// This example is in a complex social media web app that fetches info based on the path.
+// On navigation, routes set the effect to fetch the correct data and put it into a form consumable by app components.
+export const [appMeta, setAppMetaEffect] = createEffectResource<AppMeta>();
+
+// Later, in a route that contains an effect called QUERY.
+export function RootPath() {
+  onMount(() => {
+    setAppMetaEffect(QUERY);
+  });
+
+  return null; // The route doesn't do anything, the app handles the rest.
+}
+
+// Later, in an app component.
+export function UserInfo() {
+  return (
+    <Suspense fallback="Loading">
+      <p>{appMeta().userInfo.name}</p>
+      <p>{appMeta().userInfo.score}</p>
+    </Suspense>
+  );
+}
+```

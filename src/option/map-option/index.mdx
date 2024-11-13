@@ -1,0 +1,27 @@
+import { ArgTypes, Canvas, Meta, Source } from "@storybook/blocks";
+
+import * as MapOptionStories from "./index.stories";
+
+<Meta of={MapOptionStories} />;
+
+# `MapOption<T>`
+
+`MapOption` allows for mapping an `Option` to an element.
+
+[`Option` Documentation {"\u{21D2}"}](https://effect.website/docs/data-types/option/)
+
+[`Option` Reference {"\u{21D2}"}](https://effect-ts.github.io/effect/effect/Option.ts.html)
+
+The `Option` represents a value that may not exist (think `T | null` but on steroids).
+
+`MapOption` takes an `Option` valie (via the `on` property) and transforms it (via the `children` property) to a JSX element.
+Should there not be an `Option` value or if the value is `None`, it can provide a fallback element via the `fallback` property.
+When the `keyed` property is present, the mapping function in `children` uses a value instead of an accessor.
+
+<ArgTypes of={MapOptionStories} />
+
+## Examples
+
+<Canvas of={MapOptionStories.Basic} />
+<Canvas of={MapOptionStories.Fallback} />
+<Canvas of={MapOptionStories.Keyed} />

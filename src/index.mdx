@@ -1,0 +1,32 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Home" />
+
+# solid-effect
+
+This library provides utilities for integrating Effect into SolidJS.
+
+Many of the components simplify what could be achieved with built-in SolidJS components using effect-ts utilities.
+
+For example, mapping an `Option` to a JSX element:
+
+```tsx
+const value = Option.some("Text");
+
+const result = () =>
+  pipe(
+    value,
+    Option.map((x) => x.toUpperCase()),
+    Option.getOrUndefined,
+  );
+
+<Show when={Option.isSome(value)}>{result()}</Show>;
+```
+
+is simplified to:
+
+```tsx
+const value = Option.some("Text");
+
+<MapOption on={value}>{(x) => x.toUpperCase()}</MapOption>;
+```

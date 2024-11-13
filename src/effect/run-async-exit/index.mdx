@@ -1,0 +1,26 @@
+import { ArgTypes, Canvas, Meta, Source } from "@storybook/blocks";
+
+import * as RunAsyncExitStories from "./index.stories";
+
+<Meta of={RunAsyncExitStories} />
+
+# `RunAsyncExit<A, E>`
+
+`RunAsyncExit` allows for running an asynchronous `Effect` and mapping the result to a JSX element.
+
+[`Effect.runPromiseExit` Documentation {"\u{21D2}"}](https://effect.website/docs/getting-started/running-effects/#runpromiseexit)
+
+[`Effect.runPromiseExit` Reference {"\u{21D2}"}](https://effect-ts.github.io/effect/effect/Effect.ts.html#runpromiseexit)
+
+`RunAsyncExit` runs the `Effect` as a promise and integrates with `Suspense`.
+If the effect succeeds, the result is handled by `onSuccess`.
+If the effect fails, the result is handled by `onFailure`.
+
+<ArgTypes of={RunAsyncExitStories} />
+
+## Examples
+
+The following are wrapped in an `ErrorBoundary` and a `Suspense`. Reload to watch the examples load in.
+
+<Canvas of={RunAsyncExitStories.Basic} />
+<Canvas of={RunAsyncExitStories.Error} />

@@ -1,0 +1,61 @@
+import { ArgTypes, Canvas, Meta, Source } from "@storybook/blocks";
+
+import * as MatchTagStories from "./index.stories";
+
+<Meta of={MatchTagStories} />;
+
+# `MatchTag<T, S>`
+
+`MatchTag` allows for matching and mapping tagged values in `Switch` components.
+
+[`Data` Documentation {"\u{21D2}"}](https://effect.website/docs/data-types/data/)
+
+[`Data` Reference {"\u{21D2}"}](https://effect-ts.github.io/effect/effect/Data.ts.html)
+
+`Data.TaggedEnum` and `Data.taggedEnum` are useful for creating tagged enums
+([also known as tagged unions, sum types, Rust-style enums, among other names](https://en.wikipedia.org/wiki/Tagged_union)).
+Tagged enums are useful for modeling data where there are variants without much overlap.
+
+`MatchTag` takes a tagged value (via the `on` property) and when the tag matches the `tag` property,
+maps it via `children` to produce an element.
+
+<ArgTypes of={MatchTagStories} />
+
+## Examples
+
+Here's a basic example of using `MatchTag` inside of `Switch`:
+
+```tsx
+// Basic usage of MatchTag with Switch.
+import { MatchTag } from 'solid-effect';
+import { Data } from 'effect';
+
+// Create our tagged enum type.
+type Tagged = Data.TaggedEnum<{
+  Foo: { el: JSX.Element };
+  Bar: { msg: string };
+  Qux: { };
+}>;
+export const Tagged = Data.taggedEnum<Tagged>();
+
+export function Component(props: { data: Tagged }) {
+  return (
+   <Switch>
+    <MatchTag on={props.data} tag='Foo'>
+      {(x) => x.el}
+    </MatchTag>
+    <MatchTag on={props.data} tag='Bar'>
+      {(x) => `Bar says "${x.msg}"`}
+    </MatchTag>
+    <MatchTag on={props.data} tag='Qux'>
+      {() => "Hello from Qux!"}
+    </MatchTag>
+   </Switch>
+  );
+}
+
+// Then later on...
+<Component data={Tagged.Bar({ value: "What's up?" })}>
+```
+
+<Canvas of={MatchTagStories.Basic} />
