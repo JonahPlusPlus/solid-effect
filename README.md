@@ -8,7 +8,7 @@
 # solid-effect
 
 [![NPM Version](https://img.shields.io/npm/v/solid-effect)](https://www.npmjs.com/package/solid-effect)
-[!![Documentation](https://img.shields.io/badge/documentation-FF4785?logo=storybook&logoColor=white)](https://jonahplusplus.dev/solid-effect/)
+[![Documentation](https://img.shields.io/badge/documentation-FF4785?logo=storybook&logoColor=white)](https://jonahplusplus.dev/solid-effect/)
 ![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-green)
 
 solid-effect is a utility library for working with [effect-ts](https://effect.website/) in [solid-js](https://www.solidjs.com/).
