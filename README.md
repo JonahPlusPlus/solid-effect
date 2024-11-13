@@ -5,7 +5,11 @@
   </picture>
 </p>
 
-# Solid Effect
+# solid-effect
+
+[![NPM Version](https://img.shields.io/npm/v/solid-effect)](https://www.npmjs.com/package/solid-effect)
+[!![Documentation](https://img.shields.io/badge/documentation-FF4785?logo=storybook&logoColor=white)](https://jonahplusplus.dev/solid-effect/)
+![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-green)
 
 solid-effect is a utility library for working with [effect-ts](https://effect.website/) in [solid-js](https://www.solidjs.com/).
 
@@ -14,6 +18,10 @@ With Effect, you can compose your program as "effects", small programs that incl
 Effect comes out of the box with utilities for error handling, caching, retry, interruption, concurrency, and observability, among others.
 
 What solid-effect does is allow you to use these utilities closer to the edge of your SolidJS app.
+
+## Documentation
+
+[Read the docs to see all the features + examples!](https://jonahplusplus.dev/solid-effect/)
 
 ## Any examples of use-cases for using Effect with SolidJS?
 

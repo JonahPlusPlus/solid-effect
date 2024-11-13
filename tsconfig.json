@@ -16,5 +16,5 @@
     "jsxImportSource": "solid-js",
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
