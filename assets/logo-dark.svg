@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -5 170 170" stroke-width="4" stroke-linecap="round">
+  <style>
+    .p {
+      stroke: #FEFEFE;
+    }
+
+    .f {
+      stroke: #FEFEFE;
+      fill: #FEFEFE;
+    }
+
+    svg {
+      filter: drop-shadow(3px 4px 8px rgb(0 0 0 / 0.4));
+    }
+  </style>
+
+  <path class="p" d="M163 35 c-30 -20 -80 -45 -107 -25" fill="transparent" />
+  <path class="p" mask="url(#back)" d="M61 19l-4 1c-17 5-22 21-13 35 10 13 31 20 48 15l62-21S101 10 61 19z"
+    fill="transparent" />
+  <path class="f" mask="url(#back)" d="M52 35l-4 1c-17 5-22 21-13 35 10 13 31 20 48 15l62-21S92 26 52 35z" />
+
+  <path class="p" d="M20 85 L87 65c20 -7 46 5 51 22" fill="transparent" />
+  <path class="p" d="M123 96.5a45 45 0 00-48-14L13 101.5s53 40 94 30l3-1c17-5 23-21 13-34z" fill="transparent" />
+  <path class="f" d="M114 115a45 45 0 00-48-15L4 120s53 40 94 30l3-1c17-5 23-21 13-34z" />
+</svg>

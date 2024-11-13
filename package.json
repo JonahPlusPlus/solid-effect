@@ -13,7 +13,8 @@
     "fix:format": "prettier . --write",
     "fix:lint": "eslint . --fix",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic"
   },
   "sideEffects": false,
   "keywords": [
@@ -21,7 +22,9 @@
     "solidjs",
     "effect"
   ],
-  "author": "JonahPlusPlus",
+  "author": {
+    "name": "JonahPlusPlus"
+  },
   "license": "(MIT OR Apache-2.0)",
   "engines": {
     "pnpm": ">=9"
@@ -36,6 +39,7 @@
     "@storybook/test": "8.5.0-alpha.2",
     "@testing-library/jest-dom": "^6.6.2",
     "@types/node": "^22.8.6",
+    "chromatic": "^11.18.1",
     "eslint": "^9.14.0",
     "globals": "^15.12.0",
     "prettier": "^3.3.3",

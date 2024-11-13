@@ -1,4 +1,9 @@
-![Solid Effect Logo](./assets/logov2.svg)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/logo-dark.svg">
+    <img alt="solid-effect logo" width="200" src="./assets/logo-light.svg">
+  </picture>
+</p>
 
 # Solid Effect
 

@@ -34,7 +34,7 @@ import { Component, ErrorBoundary } from "solid-js";
 
 export const Basic: Story = {
   args: {
-    effect: Effect.succeed(32),
+    effect: Effect.succeed(42),
     children: (x: number) => x,
   },
 };
