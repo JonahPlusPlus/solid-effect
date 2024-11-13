@@ -25,5 +25,6 @@ const config: StorybookConfig = {
     name: getAbsolutePath("storybook-solidjs-vite"),
     options: {},
   },
+  staticDirs: ['../public'],
 };
 export default config;
