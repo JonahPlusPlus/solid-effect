@@ -1,4 +1,6 @@
-<h1>Solid Effect <img src="./assets/logov2.svg" width="48" style="position: relative; top: 12px;"></h1>
+![Solid Effect Logo](./assets/logov2.svg)
+
+# Solid Effect
 
 solid-effect is a utility library for working with [effect-ts](https://effect.website/) in [solid-js](https://www.solidjs.com/).
 
