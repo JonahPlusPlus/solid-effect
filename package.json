@@ -1,6 +1,6 @@
 {
   "name": "solid-effect",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "A collection of utilities for working with EffectTS in SolidJS",
   "type": "module",
   "scripts": {
@@ -60,7 +60,8 @@
   },
   "files": [
     "dist",
-    "LICENCE-*"
+    "LICENCE-*",
+    "public"
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
