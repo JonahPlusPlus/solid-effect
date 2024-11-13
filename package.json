@@ -1,6 +1,6 @@
 {
   "name": "solid-effect",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "A collection of utilities for working with EffectTS in SolidJS",
   "type": "module",
   "scripts": {
@@ -25,6 +25,10 @@
   ],
   "author": {
     "name": "JonahPlusPlus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonahPlusPlus/solid-effect.git"
   },
   "license": "(MIT OR Apache-2.0)",
   "engines": {
@@ -60,8 +64,7 @@
   },
   "files": [
     "dist",
-    "LICENCE-*",
-    "public"
+    "LICENCE-*"
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
