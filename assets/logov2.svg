@@ -37,8 +37,6 @@
     <path d="M52 35l-4 1c-17 5-22 21-13 35 10 13 31 20 48 15l62-21S92 26 52 35z" fill="black" stroke="black" />
   </mask> -->
 
-  <path id="a" d="M20 85 L87 65c20 -7 46 5 51 22" fill="transparent" />
-  <path id="b" d="M123 96.5a45 45 0 00-48-14L13 101.5s53 40 94 30l3-1c17-5 23-21 13-34z" fill="transparent" />
 
   <!-- <mask id="back">
     <rect x="0" y="-5" width="170" height="170" fill="white" />
@@ -51,7 +49,7 @@
     fill="transparent" />
   <path class="f" mask="url(#back)" d="M52 35l-4 1c-17 5-22 21-13 35 10 13 31 20 48 15l62-21S92 26 52 35z" />
 
-  <use class="p" href="#a" mask="url(#front)" />
-  <use class="p" href="#b" mask="url(#front)" />
+  <path class="p" d="M20 85 L87 65c20 -7 46 5 51 22" fill="transparent" />
+  <path class="p" d="M123 96.5a45 45 0 00-48-14L13 101.5s53 40 94 30l3-1c17-5 23-21 13-34z" fill="transparent" />
   <path class="f" d="M114 115a45 45 0 00-48-15L4 120s53 40 94 30l3-1c17-5 23-21 13-34z" />
 </svg>
