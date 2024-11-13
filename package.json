@@ -4,6 +4,7 @@
   "description": "A collection of utilities for working with EffectTS in SolidJS",
   "type": "module",
   "scripts": {
+    "prepack": "pnpm build",
     "build": "tsup",
     "check:all": "pnpm run check:lint && pnpm run check:test && pnpm run check:format",
     "check:format": "prettier . --check",
