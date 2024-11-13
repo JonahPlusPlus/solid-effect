@@ -33,6 +33,8 @@ For example, in cases where the resource is used by many components.
 ```tsx
 // This example is in a complex social media web app that fetches info based on the path.
 // On navigation, routes set the effect to fetch the correct data and put it into a form consumable by app components.
+import { createEffectResource } from "solid-effect";
+
 export const [appMeta, setAppMetaEffect] = createEffectResource<AppMeta>();
 
 // Later, in a route that contains an effect called QUERY.
