@@ -28,3 +28,12 @@ What solid-effect does is allow you to use these utilities closer to the edge of
 So far, I've been using Effect in my SolidJS app for my GraphQL client (service layers allow for defining configuration and better error handling) and for i18n/l10n (e.g. caching formatters based on locale).
 
 With solid-effect, I was able to pull out some of the utilities I created for displaying results (`MapOption` and `MatchTag`) and put them into their own library and improve them, while adding more utilities that I had yet to explore.
+
+## Roadmap
+
+Once I integrate this package into my own app and use it a bit more, I think I'll have a better idea of where to go.
+That said, I think the next direction will be observability (logging, metrics, and tracing).
+
+For example, it could mean having `ErrorBoundary`s that log errors into Effect, metrics that can be retrieved as signals, and tha ability to express spans as JSX.
+
+I would love to hear feedback! (`@jonahplusplus` on Discord and `@jonahplusplus.bsky.social` on Bluesky!)
