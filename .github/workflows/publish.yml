@@ -9,7 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+      - name: Set version to release tag 📝
+        run: pnpm version from-git --no-commit-hooks --no-git-tag-version --allow-same-version
       - name: Publish to NPM
         run: pnpm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Push version changes to main branch
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: release ${{ github.event.release.tag_name }}"
+          branch: ${{ github.event.repository.default_branch }}
+          file_pattern: package.json
