@@ -9,7 +9,7 @@ runs:
       with:
         node-version-file: ".nvmrc"
         cache: "pnpm"
-        registry-url: https://registry.npmjs.org
+        registry-url: "https://registry.npmjs.org/"
     - name: Print versions
       shell: bash
       run: node --version && pnpm --version
