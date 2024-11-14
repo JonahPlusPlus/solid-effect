@@ -1,6 +1,6 @@
 {
   "name": "solid-effect",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0",
   "description": "A collection of utilities for working with EffectTS in SolidJS",
   "type": "module",
   "scripts": {
@@ -58,13 +58,13 @@
     "vite-plugin-solid": "^2.10.2",
     "vitest": "^2.1.2"
   },
-  "dependencies": {
+  "peerDependencies": {
     "effect": "^3.8.4",
     "solid-js": "^1.9.3"
   },
   "files": [
     "dist",
-    "LICENCE-*"
+    "LICENSE-*"
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
